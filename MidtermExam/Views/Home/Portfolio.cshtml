@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "作品集";
+}
+
+<div class="container my-5 text-white glass-section">
+    <h1 class="fw-bold mb-4">🎨 我的網頁設計作品</h1>
+    <p class="lead">以下是我使用 HTML/CSS/Bootstrap/JavaScript/ASP.NET MVC 製作的一些網頁作品範例：</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">作品一：黑白商品展示頁</h5>
+                    <p class="card-text">這是一個以黑白極簡風格打造的商品展示頁面，展現我對於前端風格設計的敏感度與排版能力。</p>
+                    <a href="@Url.Action("BlackWhiteShop", "Home")" class="btn btn-dark">前往查看</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card glass-card h-100">
+                <img src="/images/demo2.png" class="card-img-top" alt="作品2圖片">
+                <div class="card-body">
+                <h4 class="mt-5">🖼️ 作品二：自我介紹網頁</h4>
+                <p>這是一個展示我網頁設計能力的個人介紹頁面，採用現代風格排版與響應式設計，強調資訊架構與視覺平衡。</p>
+                <a href="@Url.Action("AboutMe", "Home")" class="btn btn-dark">點我查看作品二</a>
+            </div>
+        </div>
+
+        <!-- 可再加其他卡片 -->
+    </div>
+
