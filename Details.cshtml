@@ -1,0 +1,31 @@
+﻿@model MidtermExam.Models.Shop
+
+<div class="container my-5">
+    <div class="card glass-card text-white">
+        <div class="card-body">
+            <h2 class="card-title mb-4">🔍 商品詳細資料</h2>
+            <table class="table table-bordered text-white">
+                <tr>
+                    <th>🆔 資料編號</th>
+                    <td>@Model?.ID</td>
+                </tr>
+                <tr>
+                    <th>📦 商品名稱</th>
+                    <td>@Model?.product_name</td>
+                </tr>
+                <tr>
+                    <th>💰 價格</th>
+                    <td>$@Model?.price</td>
+                </tr>
+                <tr>
+                    <th>📂 種類</th>
+                    <td>@Model?.category</td>
+                </tr>
+            </table>
+
+            <div class="text-end">
+                <a asp-action="ShopList" class="btn btn-outline-light btn-custom">返回列表</a>
+            </div>
+        </div>
+    </div>
+</div>

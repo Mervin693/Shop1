@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null; // 不使用 Layout，如需用共用 Layout 可改為 "~/Views/Shared/_Layout.cshtml"
+}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我介紹 - 我的個人網頁</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #333;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .intro-section {
+            margin-top: 5rem;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #343a40;
+        }
+
+        .btn-custom {
+            background-color: #343a40;
+            color: white;
+        }
+
+            .btn-custom:hover {
+                background-color: #495057;
+            }
+    </style>
+</head>
+<body>
+    <div class="container text-center intro-section">
+		<img src="~/images/18627.jpg" alt="我的頭像" class="avatar mb-4" >
+
+        <h1 class="fw-bold">你好，我是偉航</h1>
+        <p class="lead mt-3">一名熱愛前端設計與互動體驗的學生 / 設計師</p>
+        <hr class="my-4" />
+
+        <div class="text-start mt-4 mx-auto" style="max-width: 600px;">
+            <h4>🔹 關於我</h4>
+            <p>目前就讀於嘉義大學數位學習設計系，喜歡透過前端技術打造直觀又有風格的網頁作品，熟悉 HTML、CSS、JavaScript 以及 ASP.NET MVC 開發。</p>
+
+            <h4>🛠️ 技能</h4>
+            <ul>
+                <li>前端：HTML / CSS / Bootstrap / JavaScript </li>
+                <li>後端：C# / ASP.NET MVC</li>
+                <li>設計工具：Figma / Photoshop / Illustrator</li>
+                <li>游戲設計工具： Unity/GameMaker</li>
+                <li>版本控管：Git / GitHub</li>
+            </ul>
+
+            <h4>🎯 我的目標</h4>
+            <p>希望能夠在未來從事網頁開發或 UI/UX 設計相關工作，持續精進程式邏輯與視覺設計的整合能力。</p>
+        </div>
+
+        <div class="mt-4">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary me-2">回首頁</a>
+            <a href="@Url.Action("BlackWhiteShop", "Home")" class="btn btn-custom">作品一：黑白風格網頁</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@using MidtermExam.Models
+@{
+    ViewData["Title"] = "商品清單";
+    List<Shop> shops = ViewBag.cards as List<Shop>;
+}
+
+
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">🛍️ 精選商品一覽</h1>
+        <p class="lead text-light">立即探索我們為你精心挑選的商品！</p>
+    </div>
+
+    <!-- 🔍 搜尋欄 -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <form asp-controller="Home" asp-action="ShopList" method="get" class="input-group search-box">
+                <input type="text" name="searchString" class="form-control" placeholder="輸入商品名稱關鍵字" value="@ViewBag.SearchString">
+                <button class="btn btn-outline-light" type="submit">搜尋</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 📦 商品卡片 -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var shop in shops)
+        {
+            <div class="col">
+                <div class="card glass-card h-100 text-white">
+                    <div class="card-body">
+                        <h5 class="card-title">@shop.product_name</h5>
+                        <p class="card-text">💲 價格：$@shop.price</p>
+                        <p class="card-text">📂 分類：@shop.category</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-around">
+                        <a asp-action="Details" asp-route-id="@shop.ID" class="btn btn-info btn-custom btn-sm">詳情</a>
+                        <a asp-action="EditShop" asp-route-id="@shop.ID" class="btn btn-warning btn-custom btn-sm">編輯</a>
+                        <a asp-action="DeleteShop" asp-route-id="@shop.ID" class="btn btn-danger btn-custom btn-sm">刪除</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- ➕ 新增按鈕 -->
+    <div class="text-center mt-5">
+        <a href="@Url.Action("CreateShop", "Home")" class="btn btn-success btn-lg btn-custom">＋ 新增商品</a>
+    </div>
+</div>
